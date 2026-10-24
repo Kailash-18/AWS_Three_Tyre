@@ -50,7 +50,7 @@ resource "aws_launch_template" "backend" {
 
   user_data = base64encode(templatefile("${path.module}/backend-user-data.sh", {
     BOOTSTRAP_DEMO_APP = var.bootstrap_demo_app
-    BACKEND_PORT        = var.backend_port
+    BACKEND_PORT       = var.backend_port
   }))
 
   metadata_options {

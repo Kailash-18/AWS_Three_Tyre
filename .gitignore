@@ -9,4 +9,4 @@ crash.*.log
 *.key
 .DS_Store
 .vscode/
-*.sh
+*.sh!*user-data.sh

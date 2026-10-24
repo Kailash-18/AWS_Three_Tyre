@@ -1,7 +1,3 @@
-data "aws_ssm_parameter" "al2023_ami" {
-  name = "/aws/service/ami-amazon-linux-latest/al2023-ami-kernel-default-x86_64"
-}
-
 resource "aws_launch_template" "frontend" {
   name_prefix            = "${var.project_name}-primary-frontend-"
   image_id               = coalesce(var.frontend_ami_id, data.aws_ssm_parameter.al2023_ami.value)
