@@ -32,6 +32,7 @@ variable "azs" {
 variable "admin_cidr" {
   description = "CIDR allowed to SSH to the bastion host, for example 203.0.113.10/32"
   type        = string
+  default     = "203.0.113.10/32" // edit
 
   validation {
     condition     = var.admin_cidr != "0.0.0.0/0"
@@ -42,6 +43,7 @@ variable "admin_cidr" {
 variable "key_name" {
   description = "Existing EC2 key-pair name in the primary region"
   type        = string
+  default     = "sri" // edit
 }
 
 variable "instance_type" {
@@ -113,6 +115,7 @@ variable "db_password" {
   description = "Primary RDS master password. Keep this in terraform.tfvars or a secret workflow."
   type        = string
   sensitive   = true
+  default     = "AdminPass123!" // edit
 }
 
 variable "db_name" {
@@ -134,4 +137,10 @@ variable "backend_port" {
   description = "Port exposed by the backend application"
   type        = number
   default     = 80
+}
+
+variable "db_identifier" {
+  description = "Identifier for the primary RDS database"
+  type        = string
+  default     = "kailash-db"
 }

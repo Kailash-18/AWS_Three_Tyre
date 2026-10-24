@@ -38,6 +38,7 @@ variable "azs" {
 variable "admin_cidr" {
   description = "CIDR allowed to SSH to application instances in the secondary region"
   type        = string
+  default     = "203.0.113.10/32" // edit
 
   validation {
     condition     = var.admin_cidr != "0.0.0.0/0"
@@ -48,6 +49,7 @@ variable "admin_cidr" {
 variable "key_name" {
   description = "Existing EC2 key-pair name in the secondary region"
   type        = string
+  default     = "sri" // edit
 }
 
 variable "instance_type" {
@@ -119,4 +121,10 @@ variable "backend_port" {
   description = "Port exposed by the backend application"
   type        = number
   default     = 80
+}
+
+variable "db_identifier" {
+  description = "Identifier of the primary RDS database to replicate"
+  type        = string
+  default     = "kailash-db"
 }
