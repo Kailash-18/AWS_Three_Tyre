@@ -45,9 +45,12 @@ AWS infrastructure project for a **3-tier application deployed across two differ
 - Amazon RDS for MySQL
 - Cross-region RDS Read Replica
 - Bastion Host
-- Aws CloudFront
+- AWS CloudFront
+- AWS WAFv2 (Web Application Firewall with rate limiting & OWASP rules)
+- Amazon Route 53 (Multi-region health checks & failover)
+- Amazon CloudWatch (Metric alarms for RDS CPU, storage, and ALB 5XX)
 - AWS Systems Manager public AMI parameter
-- Terraform
+- Terraform & GitHub Actions CI Pipeline
 
 
 ## Deployment Order
